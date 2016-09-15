@@ -21,6 +21,7 @@ public class AlbumCollection {
     static {
         // Add some sample items.
         for (int i = 1; i <= COUNT; i++) {
+
             addItem(createDummyItem(i));
         }
     }
@@ -31,7 +32,7 @@ public class AlbumCollection {
     }
 
     private static AlbumItem createDummyItem(int position) {
-        return new AlbumItem(String.valueOf(position), "Item " + position, makeDetails(position), 0);
+        return new AlbumItem(String.valueOf(position), "Item " + position, makeDetails(position), "cover_0");
     }
 
     private static String makeDetails(int position) {
@@ -50,13 +51,13 @@ public class AlbumCollection {
         public final String title;
         public final String artist;
         public final String details;
-        public final int thumbnail;
+        public final String coverFile;
 
-        public AlbumItem(String title, String artist, String details, int thumbnail) {
+        public AlbumItem(String title, String artist, String details, String coverFile) {
             this.title = title;
             this.artist = artist;
             this.details = details;
-            this.thumbnail = thumbnail;
+            this.coverFile = coverFile;
         }
 
         @Override

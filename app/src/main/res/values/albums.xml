@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="titles">
+        <item>Kind Of Blue</item>
+        <item>A Love Supreme</item>
+        <item>Time Out</item>
+        <item>Ellington At Newport</item>
+        <item>Jazz At Massey Hall</item>
+
+    </string-array>
+
+    <string-array name="artists">
+        <item>Miles Davis</item>
+        <item>John Coltrane</item>
+        <item>Dave Brubeck</item>
+        <item>Duke Ellington</item>
+        <item>The Quintet</item>
+     </string-array>
+\'
+    <string-array name="descriptions">
+        <item>While it is one of the top selling jazz albums of all time, many consider this to be THE best jazz album of all time. This may be because this unrehearsed recording session from 1959 marks a great turning point in jazz history as well as showcasing the top form of some legendary musicians. Miles showed up to the Columbia recording studio with some rough melodies and chords jotted down on paper and the band proceeded to track each song in one or two takes. That\'s how Miles liked to do it, he made sure the music was spontaneous and in the moment. This album also marked a departure from the traditional bebop style with songs that are simple melodies over simple chord progressions leaving room for the deep improvisational exploration. What a treat it is to listen to time and time again.</item>
+        <item>This album completely revolutionized the jazz scene in 1965 and even today its influence can be found in many musical styles. Instead of showcasing the complex and dense harmonic language in a post-bop style developed with Miles Davis and Thelonious Monk, Coltrane blows over simpler chords freely with a raw spiritual passion. The four songs on this album convey emotions of anger, joy, sadness, ecstasy, tragedy and triumph. Many types of artists, such as writers or painters, use this album to inspire energy and passion from within themselves for their own personal art. This album also marked a turning point in Coltrane\'s playing as he ventured into performing music from it\'s deepest, most spiritual roots rather from a his previous technical perspective.</item>
+        <item>Dave Brubeck created a masterpiece which became the first instrumental jazz album to sell over a million copies. The single, "Take Five" was a number one hit on music charts which is outstanding for a jazz song, especially a song with 5/4 time signature. This album had a strong influence from Eastern European culture as Brubeck used many of their rhythms and time signatures. The complex rhythms he uses sound unique yet very natural and easy to listen to, probably the reason for it\'s success.</item>
+        <item>This historic concert was a triumphant moment for Ellington\'s band... It was 1956 and many big bands were struggling due to the rise of bebop and modern small group format. So at the 3rd annual Newport Jazz Festival, Ellington attempted to please the crowd with some new suites and arrangements, but the crowd was still sedated. Then finally on a two-section song, Dimuendo and Crescendo in Blue, Duke had the two sections connect with a sax solo by Paul Gonzalves and allowed him to play the solo as long as he felt like playing. He only usually took a couple choruses but this time Gonzalves took a 27 chorus solo that eventually had the crowd off its feet and dancing! This historical moment changed the face of jazz and also gave Ellington\'s band some new success. Duke\'s band continued performing from this newfound popularity for 18 more years.</item>
+        <item>This album appears reissued under the name "The Greatest Concert Ever". It is an all star lineup of Charlie Parker, Dizzy Gillespie, Bud Powell, Charles Mingus, and Max Roach; all who were prominent in the development of bebop about 15 years beforehand (1953) and thus were all seasoned veterans by the time of the concert. This is the only recording of these five legends playing together and everyone plays brilliantly. In addition, the recording quality is very good for its time so it is a great album to really hear these masters perform at their best.</item>
+    </string-array>
+
+</resources>

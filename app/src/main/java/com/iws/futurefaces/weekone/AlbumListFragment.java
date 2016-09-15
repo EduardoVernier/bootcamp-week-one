@@ -12,6 +12,9 @@ import android.view.ViewGroup;
 
 import com.iws.futurefaces.weekone.AlbumCollection.AlbumItem;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A fragment representing a list of Items.
  * <p>
@@ -23,8 +26,9 @@ public class AlbumListFragment extends Fragment {
 	private int mColumnCount = 2;
 	private static final String ARG_COLUMN_COUNT = "column-count";
 	private OnListFragmentInteractionListener mListener;
+	private List<AlbumItem> albumList;
+	private AlbumAdapter adapter;
 
-	// TODO: Customize parameter initialization
 	@SuppressWarnings("unused")
 	public static AlbumListFragment newInstance(int columnCount) {
 		AlbumListFragment fragment = new AlbumListFragment();
@@ -56,15 +60,30 @@ public class AlbumListFragment extends Fragment {
 		// Set the adapter
 		if (view instanceof RecyclerView) {
 			Context context = view.getContext();
+
 			RecyclerView recyclerView = (RecyclerView) view;
 			if (mColumnCount <= 1) {
 				recyclerView.setLayoutManager(new LinearLayoutManager(context));
 			} else {
 				recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
 			}
-			recyclerView.setAdapter(new AlbumRecyclerViewAdapter(AlbumCollection.ITEMS, mListener));
+			albumList = new ArrayList<AlbumItem>();
+			adapter = new AlbumAdapter(albumList, mListener);
+			recyclerView.setAdapter(adapter);
+			prepareAlbums();
 		}
 		return view;
+	}
+
+	private void prepareAlbums() {
+		for (int i = 0; i < 5; i++) {
+			String title = getContext().getResources().getStringArray(R.array.titles)[i];
+			String artist = getContext().getResources().getStringArray(R.array.artists)[i];
+			String description = getContext().getResources().getStringArray(R.array.descriptions)[i];
+			String coverStr = "cover_"+i;
+			albumList.add(new AlbumItem(title, artist, description, coverStr));
+		}
+		adapter.notifyDataSetChanged();
 	}
 
 
