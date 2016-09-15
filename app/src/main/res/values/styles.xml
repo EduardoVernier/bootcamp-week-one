@@ -9,4 +9,8 @@
         <item name="android:windowContentTransitions">true</item>
     </style>
 
+    <style name="spotifyButton" parent="Theme.AppCompat.Light">
+        <item name="android:textColor">@color/spotify</item>
+    </style>
+
 </resources>

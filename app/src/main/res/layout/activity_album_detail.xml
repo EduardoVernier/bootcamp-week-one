@@ -90,6 +90,17 @@
                 android:layout_below="@+id/detail_artist"
                 android:layout_alignStart="@+id/detail_artist" />
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Play on Spotify"
+                android:id="@+id/spotify"
+                android:layout_below="@+id/detail_description"
+                android:layout_alignEnd="@+id/detail_description"
+                android:theme="@style/spotifyButton"
+                style="@style/Widget.AppCompat.Button.Borderless"/>
+
+
         </RelativeLayout>
 
     </android.support.v4.widget.NestedScrollView>
