@@ -15,7 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AlbumDetailActivity"></activity>
+        <activity android:name=".AlbumDetailActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.iws.futurefaces.weekone.MainActivity" />
+        </activity>
+
     </application>
 
 </manifest>
