@@ -81,7 +81,7 @@ public class AlbumListFragment extends Fragment {
 			String artist = getContext().getResources().getStringArray(R.array.artists)[i];
 			String description = getContext().getResources().getStringArray(R.array.descriptions)[i];
 			String coverStr = "cover_"+i;
-			albumList.add(new AlbumItem(title, artist, description, coverStr));
+			albumList.add(new AlbumItem(title, artist, description, coverStr, getContext()));
 		}
 		adapter.notifyDataSetChanged();
 	}

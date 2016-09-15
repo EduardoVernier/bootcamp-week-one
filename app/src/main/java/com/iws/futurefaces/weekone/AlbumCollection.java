@@ -1,5 +1,9 @@
 package com.iws.futurefaces.weekone;
 
+import android.content.Context;
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,21 +22,9 @@ public class AlbumCollection {
 
     private static final int COUNT = 25;
 
-    static {
-        // Add some sample items.
-        for (int i = 1; i <= COUNT; i++) {
-
-            addItem(createDummyItem(i));
-        }
-    }
-
     private static void addItem(AlbumItem item) {
         ITEMS.add(item);
         ITEM_MAP.put(item.title, item);
-    }
-
-    private static AlbumItem createDummyItem(int position) {
-        return new AlbumItem(String.valueOf(position), "Item " + position, makeDetails(position), "cover_0");
     }
 
     private static String makeDetails(int position) {
@@ -47,22 +39,57 @@ public class AlbumCollection {
     /**
      * A dummy item representing a piece of content.
      */
-    public static class AlbumItem {
+    public static class AlbumItem implements Parcelable {
         public final String title;
         public final String artist;
         public final String details;
-        public final String coverFile;
+        public final int coverId;
 
-        public AlbumItem(String title, String artist, String details, String coverFile) {
+
+        public AlbumItem(String title, String artist, String details, String coverFile, Context current) {
             this.title = title;
             this.artist = artist;
             this.details = details;
-            this.coverFile = coverFile;
+            this.coverId = current.getResources().getIdentifier(coverFile, "drawable", current.getPackageName());
         }
 
         @Override
         public String toString() {
             return artist;
         }
+
+        // Parcelable magic
+        protected AlbumItem(Parcel in) {
+            title = in.readString();
+            artist = in.readString();
+            details = in.readString();
+            coverId= in.readInt();
+        }
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeString(title);
+            dest.writeString(artist);
+            dest.writeString(details);
+            dest.writeInt(coverId);
+        }
+
+        @SuppressWarnings("unused")
+        public static final Parcelable.Creator<AlbumItem> CREATOR = new Parcelable.Creator<AlbumItem>() {
+            @Override
+            public AlbumItem createFromParcel(Parcel in) {
+                return new AlbumItem(in);
+            }
+
+            @Override
+            public AlbumItem[] newArray(int size) {
+                return new AlbumItem[size];
+            }
+        };
     }
 }

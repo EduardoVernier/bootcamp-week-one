@@ -1,6 +1,9 @@
 package com.iws.futurefaces.weekone;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,11 +45,17 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).title);
         holder.mContentView.setText(mValues.get(position).artist);
-        int drawableResourceId = context.getResources().getIdentifier(mValues.get(position).coverFile, "drawable", context.getPackageName());
-        holder.mIdImageView.setImageResource(drawableResourceId);
+        holder.mIdImageView.setImageResource(mValues.get(position).coverId);
+
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(context, AlbumDetailActivity.class);
+                intent.putExtra("Album", holder.mItem);
+                ActivityOptionsCompat options = ActivityOptionsCompat.
+                        makeSceneTransitionAnimation((Activity)context, (View) v, "cover");
+                context.startActivity(intent, options.toBundle());
+
                 if (null != mListener) {
                     // Notify the active callbacks interface (the activity, if the
                     // fragment is attached to one) that an item has been selected.
