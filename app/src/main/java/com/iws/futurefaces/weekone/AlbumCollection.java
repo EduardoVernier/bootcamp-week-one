@@ -46,7 +46,8 @@ public class AlbumCollection {
         public final int coverId;
 
 
-        public AlbumItem(String title, String artist, String details, String coverFile, Context current) {
+        public AlbumItem(String title, String artist, String details, String coverFile,
+                          Context current) {
             this.title = title;
             this.artist = artist;
             this.details = details;
@@ -80,7 +81,8 @@ public class AlbumCollection {
         }
 
         @SuppressWarnings("unused")
-        public static final Parcelable.Creator<AlbumItem> CREATOR = new Parcelable.Creator<AlbumItem>() {
+        public static final Parcelable.Creator<AlbumItem> CREATOR =
+                new Parcelable.Creator<AlbumItem>() {
             @Override
             public AlbumItem createFromParcel(Parcel in) {
                 return new AlbumItem(in);

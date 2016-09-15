@@ -27,7 +27,8 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
     private final OnListFragmentInteractionListener mListener;
     private Context context;
 
-    public AlbumAdapter(List<AlbumItem> items, OnListFragmentInteractionListener listener, Context current) {
+    public AlbumAdapter(List<AlbumItem> items, OnListFragmentInteractionListener listener,
+                         Context current) {
         mValues = items;
         mListener = listener;
         context = current;
