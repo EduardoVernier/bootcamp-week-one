@@ -1,13 +1,15 @@
 package com.iws.futurefaces.weekone;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.iws.futurefaces.weekone.AlbumListFragment.OnListFragmentInteractionListener;
 import com.iws.futurefaces.weekone.AlbumCollection.AlbumItem;
+import com.iws.futurefaces.weekone.AlbumListFragment.OnListFragmentInteractionListener;
 
 import java.util.List;
 
@@ -20,10 +22,12 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
 
     private final List<AlbumItem> mValues;
     private final OnListFragmentInteractionListener mListener;
+    private Context context;
 
-    public AlbumAdapter(List<AlbumItem> items, OnListFragmentInteractionListener listener) {
+    public AlbumAdapter(List<AlbumItem> items, OnListFragmentInteractionListener listener, Context current) {
         mValues = items;
         mListener = listener;
+        context = current;
     }
 
     @Override
@@ -38,7 +42,8 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).title);
         holder.mContentView.setText(mValues.get(position).artist);
-
+        int drawableResourceId = context.getResources().getIdentifier(mValues.get(position).coverFile, "drawable", context.getPackageName());
+        holder.mIdImageView.setImageResource(drawableResourceId);
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,6 +63,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
+        public final ImageView mIdImageView;
         public final TextView mIdView;
         public final TextView mContentView;
         public AlbumItem mItem;
@@ -65,6 +71,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         public ViewHolder(View view) {
             super(view);
             mView = view;
+            mIdImageView = (ImageView) view.findViewById(R.id.thumbnail);
             mIdView = (TextView) view.findViewById(R.id.title);
             mContentView = (TextView) view.findViewById(R.id.artist);
         }

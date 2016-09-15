@@ -68,7 +68,7 @@ public class AlbumListFragment extends Fragment {
 				recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
 			}
 			albumList = new ArrayList<AlbumItem>();
-			adapter = new AlbumAdapter(albumList, mListener);
+			adapter = new AlbumAdapter(albumList, mListener, context);
 			recyclerView.setAdapter(adapter);
 			prepareAlbums();
 		}
