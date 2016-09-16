@@ -18,15 +18,9 @@ import com.iws.futurefaces.weekone.AlbumCollection.AlbumItem;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A fragment representing a list of Items.
- * <p>
- * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
- * interface.
- */
 public class AlbumListFragment extends Fragment implements AlbumAdapter.OnListFragmentInteractionListener {
 
-	private int mColumnCount = 2;
+	private int mColumnCount = 1;
 	private static final String ARG_COLUMN_COUNT = "column-count";
 	private List<AlbumItem> albumList;
 	private AlbumAdapter adapter;
@@ -38,7 +32,9 @@ public class AlbumListFragment extends Fragment implements AlbumAdapter.OnListFr
 		args.putInt(ARG_COLUMN_COUNT, columnCount);
 		fragment.setArguments(args);
 		return fragment;
-	}	/**
+	}
+
+    /**
 	 * Mandatory empty constructor for the fragment manager to instantiate the
 	 * fragment (e.g. upon screen orientation changes).
 	 */
@@ -57,7 +53,7 @@ public class AlbumListFragment extends Fragment implements AlbumAdapter.OnListFr
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.album_item_list, container, false);
+		View view = inflater.inflate(R.layout.album_list_view, container, false);
 
 		// Set the adapter
 		if (view instanceof RecyclerView) {
@@ -70,7 +66,7 @@ public class AlbumListFragment extends Fragment implements AlbumAdapter.OnListFr
 				recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
 			}
 			albumList = new ArrayList<AlbumItem>();
-			adapter = new AlbumAdapter(albumList, this, context);
+			adapter = new AlbumAdapter(albumList, this, mColumnCount, context);
 			recyclerView.setAdapter(adapter);
 			prepareAlbums();
 		}

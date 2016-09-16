@@ -22,19 +22,43 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
     private final List<AlbumItem> mValues;
     private final OnListFragmentInteractionListener mListener;
     private Context context;
+    private int nColumns;
 
     public AlbumAdapter(List<AlbumItem> items, OnListFragmentInteractionListener listener,
-                         Context current) {
+                        int nColumns, Context current) {
         mValues = items;
         mListener = listener;
         context = current;
+        this.nColumns = nColumns;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return this.nColumns;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.album_item, parent, false);
-        return new ViewHolder(view);
+
+        View view;
+        ViewHolder viewHolder;
+        LayoutInflater inflater = LayoutInflater.from(context);
+
+        switch (viewType) {
+            case 1:
+                view = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.album_item_linear, parent, false);
+                viewHolder = new ViewHolder(view);
+                break;
+            default:
+                view = LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.album_item_grid, parent, false);
+                viewHolder = new ViewHolder(view);
+                break;
+        }
+
+
+        return viewHolder;
     }
 
     @Override
@@ -47,12 +71,6 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(context, AlbumDetailActivity.class);
-//                intent.putExtra("Album", holder.mItem);
-//                ActivityOptionsCompat options = ActivityOptionsCompat.
-//                        makeSceneTransitionAnimation((Activity)context, (View) v, "cover");
-//                context.startActivity(intent, options.toBundle());
-
                 if (null != mListener) {
                     // Notify the active callbacks interface (the activity, if the
                     // fragment is attached to one) that an item has been selected.
