@@ -1,9 +1,6 @@
 package com.iws.futurefaces.weekone;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.iws.futurefaces.weekone.AlbumCollection.AlbumItem;
-import com.iws.futurefaces.weekone.AlbumListFragment.OnListFragmentInteractionListener;
 
 import java.util.List;
 
@@ -51,11 +47,11 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, AlbumDetailActivity.class);
-                intent.putExtra("Album", holder.mItem);
-                ActivityOptionsCompat options = ActivityOptionsCompat.
-                        makeSceneTransitionAnimation((Activity)context, (View) v, "cover");
-                context.startActivity(intent, options.toBundle());
+//                Intent intent = new Intent(context, AlbumDetailActivity.class);
+//                intent.putExtra("Album", holder.mItem);
+//                ActivityOptionsCompat options = ActivityOptionsCompat.
+//                        makeSceneTransitionAnimation((Activity)context, (View) v, "cover");
+//                context.startActivity(intent, options.toBundle());
 
                 if (null != mListener) {
                     // Notify the active callbacks interface (the activity, if the
@@ -69,6 +65,10 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
     @Override
     public int getItemCount() {
         return mValues.size();
+    }
+
+    public interface OnListFragmentInteractionListener {
+        void onListFragmentInteraction(AlbumItem item);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

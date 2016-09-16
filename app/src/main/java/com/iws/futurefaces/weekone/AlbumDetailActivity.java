@@ -18,7 +18,7 @@ public class AlbumDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_album_detail);
 
         Bundle data = getIntent().getExtras();
-        AlbumCollection.AlbumItem album = (AlbumCollection.AlbumItem) data.getParcelable("Album");
+        final AlbumCollection.AlbumItem album = (AlbumCollection.AlbumItem) data.getParcelable("Album");
 
         ImageView cover = (ImageView) findViewById(R.id.detail_cover);
         TextView title = (TextView) findViewById(R.id.detail_title);
@@ -35,8 +35,7 @@ public class AlbumDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MediaStore.INTENT_ACTION_MEDIA_PLAY_FROM_SEARCH);
-                intent.setData(Uri.parse(
-                        "spotify:user:11158272501:playlist:4Rj0zQ0Ux47upeqVSIuBx9"));
+                intent.setData(Uri.parse(album.uri));
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }

@@ -9,22 +9,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Helper class for providing sample content for user interfaces created by
- * Android template wizards.
- * <p>
- * TODO: Replace all uses of this class before publishing your app.
- */
 public class AlbumCollection {
 
     public static final List<AlbumItem> ITEMS = new ArrayList<AlbumItem>();
     public static final Map<String, AlbumItem> ITEM_MAP = new HashMap<String, AlbumItem>();
 
-    private static final int COUNT = 25;
+    private static int COUNT = 0;
 
     private static void addItem(AlbumItem item) {
         ITEMS.add(item);
         ITEM_MAP.put(item.title, item);
+        AlbumCollection.COUNT++;
+    }
+
+    public static int getCount() {
+        return COUNT;
     }
 
     private static String makeDetails(int position) {
@@ -36,19 +35,17 @@ public class AlbumCollection {
         return builder.toString();
     }
 
-    /**
-     * A dummy item representing a piece of content.
-     */
     public static class AlbumItem implements Parcelable {
         public final String title;
         public final String artist;
         public final String details;
+        public final String uri;
         public final int coverId;
 
-
-        public AlbumItem(String title, String artist, String details, String coverFile,
+        public AlbumItem(String title, String artist, String details, String coverFile, String uri,
                           Context current) {
             this.title = title;
+            this.uri = uri;
             this.artist = artist;
             this.details = details;
             this.coverId = current.getResources().getIdentifier(coverFile, "drawable", current.getPackageName());
@@ -64,6 +61,7 @@ public class AlbumCollection {
             title = in.readString();
             artist = in.readString();
             details = in.readString();
+            uri = in.readString();
             coverId= in.readInt();
         }
 
@@ -77,6 +75,7 @@ public class AlbumCollection {
             dest.writeString(title);
             dest.writeString(artist);
             dest.writeString(details);
+            dest.writeString(uri);
             dest.writeInt(coverId);
         }
 

@@ -1,2 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_84d1301a92b743c743643b1fb5f8af63329c4635/classes.dex" />
+    </item>
+    <item
+        jar="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_75c9dda30b204e5f6c4dd07bdb8770188365ac51/classes.dex" />
+    </item>
+    <item
+        jar="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_1fc78daea7ffd283ccc9b5c302a1cdfa64374fca/classes.dex" />
+    </item>
+    <item
+        jar="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_d8dca60203f10259e411472d09f391312251e583/classes.dex" />
+    </item>
+    <item
+        jar="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_34a3e91436089413574c158cdf564607318a97a9/classes.dex" />
+    </item>
+    <item
+        jar="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="a31a80a9dce0d2e89238928fad2fd1ed2a7832d2">
+        <dex dex="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_2aee1c283a7747b405586b9b392f11970a7f2e6d/classes.dex" />
+    </item>
+    <item
+        jar="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_d8bf5970b72bc62baee58390cef8f2411d122086/classes.dex" />
+    </item>
+    <item
+        jar="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_9b577320b12ca14a30e5477964ed2fcc136c6c99/classes.dex" />
+    </item>
+    <item
+        jar="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_a9f2eb64504be84cf18d56e3dcce679f9d957719/classes.dex" />
+    </item>
+    <item
+        jar="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_5f2ccaabc820d6f2ea9b97a2b9f4c585d9d8060d/classes.dex" />
+    </item>
+    <item
+        jar="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_19ddc8ae569e5a0def4b81bfe5873dd511f996e2/classes.dex" />
+    </item>
+    <item
+        jar="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_c248d0c70ec6408e600c6c6406ed94fff7e5ad61/classes.dex" />
+    </item>
+    <item
+        jar="/home/administrador/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_7d6bb1110fd154bfee72f623178e01f925cc5bf3/classes.dex" />
+    </item>
+    <item
+        jar="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="c5e6490573cd2cc8018417f60ddd251138b6ed61">
+        <dex dex="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-24.2.1_5f1952c27245e0a8e7a17c794b9b55d78e317a06/classes.dex" />
+    </item>
+    <item
+        jar="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="d326055a8366d5c623070c3c0fcdb37c04cd3af4">
+        <dex dex="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c2f0021afe0764a0699ed4588754d92bc0ae4e08/classes.dex" />
+    </item>
+    <item
+        jar="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_ceb7efee6290935cb79def29cf434ad867e720f9/classes.dex" />
+    </item>
+    <item
+        jar="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_4646d2d004a21746fec1e6fd93794e7d79704d56/classes.dex" />
+    </item>
+    <item
+        jar="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_baee1629d0c004d49a16f19017ccb9e5833d70c3/classes.dex" />
+    </item>
+    <item
+        jar="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_ad81c4c0285e220b3b2428194abc01f45babf99f/classes.dex" />
+    </item>
+    <item
+        jar="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_3d905b561e5d31b15c9fd46d34c534402c530dc6/classes.dex" />
+    </item>
+
+</items>
