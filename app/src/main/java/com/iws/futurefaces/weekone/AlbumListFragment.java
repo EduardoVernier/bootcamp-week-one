@@ -10,18 +10,22 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.iws.futurefaces.weekone.AlbumCollection.AlbumItem;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class AlbumListFragment extends Fragment
 		implements AlbumAdapter.OnListFragmentInteractionListener {
 
+	final static int LINEAR = 1, GRID = 2;
 	private static int mColumnCount = 2;
 	private static final String ARG_COLUMN_COUNT = "column-count";
 	private List<AlbumItem> albumList;
@@ -36,7 +40,7 @@ public class AlbumListFragment extends Fragment
 		return fragment;
 	}
 
-    /**
+	/*
 	 * Mandatory empty constructor for the fragment manager to instantiate the
 	 * fragment (e.g. upon screen orientation changes).
 	 */
@@ -57,27 +61,62 @@ public class AlbumListFragment extends Fragment
 							 Bundle savedInstanceState) {
 
 		View view = inflater.inflate(R.layout.album_list_view, container, false);
-		// Set the adapter
 		if (view instanceof RecyclerView) {
 			Context context = view.getContext();
 
-			// Create 2 types of item view: list and grid
+			// Items are laid out on a grid by default
 			RecyclerView recyclerView = (RecyclerView) view;
-			if (mColumnCount <= 1) {
-				recyclerView.setLayoutManager(new LinearLayoutManager(context));
-			} else {
-				recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
-			}
+			recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
+
+			// Set the adapter
 			albumList = new ArrayList<AlbumItem>();
 			adapter = new AlbumAdapter(albumList, this, mColumnCount, context);
 			recyclerView.setAdapter(adapter);
+
+			// Collect data from resource file
 			prepareAlbums();
+
+			// Set drag and drop callback
+			ItemTouchHelper mIth = new ItemTouchHelper(
+					new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP | ItemTouchHelper.DOWN,
+							ItemTouchHelper.LEFT) {
+						public boolean onMove(RecyclerView recyclerView,
+											  RecyclerView.ViewHolder viewHolder,
+											  RecyclerView.ViewHolder target) {
+
+							final int fromPos = viewHolder.getAdapterPosition();
+							final int toPos = target.getAdapterPosition();
+							// Move item in fromPos to toPos in adapter.
+							if (fromPos < toPos) {
+								for (int i = fromPos; i < toPos; i++) {
+									Collections.swap(adapter.mValues, i, i + 1);
+								}
+							} else {
+								for (int i = fromPos; i > toPos; i--) {
+									Collections.swap(adapter.mValues, i, i - 1);
+								}
+							}
+							adapter.notifyItemMoved(fromPos, toPos);
+							return true;
+						}
+
+						// Workaround to disable swipe
+						public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+							// remove from adapter
+						}
+						@Override
+						public int getSwipeDirs(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+							return 0;
+						}
+					});
+			mIth.attachToRecyclerView(recyclerView);
 		}
 		return view;
 	}
 
 	// Get album info from resources
 	private void prepareAlbums() {
+
 		for (int i = 0; i < getResources().getStringArray(R.array.titles).length; i++) {
 			String title = getContext().getResources().getStringArray(R.array.titles)[i];
 			String artist = getContext().getResources().getStringArray(R.array.artists)[i];
@@ -92,31 +131,33 @@ public class AlbumListFragment extends Fragment
 	@Override
 	public void onDetach() {
 		super.onDetach();
-    }
+	}
 
 	// Launch detail activity when cards are interacted with
-    @Override
-    public void onListFragmentInteraction(AlbumItem item) {
-        Intent intent = new Intent(getContext(), AlbumDetailActivity.class);
-        intent.putExtra("Album", item);
-        ActivityOptionsCompat options = ActivityOptionsCompat.
-                makeSceneTransitionAnimation((Activity) getContext(),
-                        (View) getActivity().findViewById(R.id.container), "cover");
-        startActivity(intent, options.toBundle());
-    }
+	@Override
+	public void onListFragmentInteraction(AlbumItem item) {
+		Intent intent = new Intent(getContext(), AlbumDetailActivity.class);
+		intent.putExtra("Album", item);
+		ActivityOptionsCompat options = ActivityOptionsCompat.
+				makeSceneTransitionAnimation((Activity) getContext(),
+						(View) getActivity().findViewById(R.id.container), "cover");
+		startActivity(intent, options.toBundle());
+	}
 
-	public void toggleLayoutManager() {
+	public void toggleLayoutManager(MenuItem menuItem) {
 
-		mColumnCount = (mColumnCount == 1)? 2 : 1;
+		mColumnCount = (mColumnCount == LINEAR)? GRID : LINEAR;
 		Context context = (Context) getContext();
 		RecyclerView view = (RecyclerView) getView();
 		if (context == null) // Virtual device sometimes has null context
 			return;
 
+		// Instantiate new adapter
 		adapter = new AlbumAdapter(albumList, this, mColumnCount, context);
 		view.setAdapter(adapter);
 
-		if (mColumnCount == 1) {
+		// Set layout
+		if (mColumnCount == LINEAR) {
 			view.setLayoutManager(new LinearLayoutManager(context));
 		} else {
 			if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
@@ -124,7 +165,14 @@ public class AlbumListFragment extends Fragment
 			else
 				view.setLayoutManager(new GridLayoutManager(context, mColumnCount));
 		}
+
+		// Change layout icon
+		if (mColumnCount == LINEAR)
+			menuItem.setIcon(R.drawable.ic_view_module_black_24dp);
+		else
+			menuItem.setIcon(R.drawable.ic_view_list_black_24dp);
 	}
+
 
 	public void rotateLayout() {
 

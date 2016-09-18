@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> {
 
-    private final List<AlbumItem> mValues;
+    public final List<AlbumItem> mValues;
     private final OnListFragmentInteractionListener mListener;
     private Context context;
     private int nColumns;

@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,10 +34,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            // action with ID action_refresh was selected
             case R.id.toggleView:
-                Toast.makeText(this, "Toggle", Toast.LENGTH_SHORT).show();
-				albumListFrag.toggleLayoutManager();
+				albumListFrag.toggleLayoutManager(item);
                 break;
             default:
                 break;
