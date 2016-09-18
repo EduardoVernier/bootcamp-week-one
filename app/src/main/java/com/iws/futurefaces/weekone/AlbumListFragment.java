@@ -18,9 +18,10 @@ import com.iws.futurefaces.weekone.AlbumCollection.AlbumItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AlbumListFragment extends Fragment implements AlbumAdapter.OnListFragmentInteractionListener {
+public class AlbumListFragment extends Fragment
+		implements AlbumAdapter.OnListFragmentInteractionListener {
 
-	private int mColumnCount = 1;
+	private static int mColumnCount = 2;
 	private static final String ARG_COLUMN_COUNT = "column-count";
 	private List<AlbumItem> albumList;
 	private AlbumAdapter adapter;
@@ -53,12 +54,13 @@ public class AlbumListFragment extends Fragment implements AlbumAdapter.OnListFr
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.album_list_view, container, false);
 
+		View view = inflater.inflate(R.layout.album_list_view, container, false);
 		// Set the adapter
 		if (view instanceof RecyclerView) {
 			Context context = view.getContext();
 
+			// Create 2 types of item view: list and grid
 			RecyclerView recyclerView = (RecyclerView) view;
 			if (mColumnCount <= 1) {
 				recyclerView.setLayoutManager(new LinearLayoutManager(context));
@@ -73,6 +75,7 @@ public class AlbumListFragment extends Fragment implements AlbumAdapter.OnListFr
 		return view;
 	}
 
+	// Get album info from resources
 	private void prepareAlbums() {
 		for (int i = 0; i < getResources().getStringArray(R.array.titles).length; i++) {
 			String title = getContext().getResources().getStringArray(R.array.titles)[i];
@@ -90,6 +93,7 @@ public class AlbumListFragment extends Fragment implements AlbumAdapter.OnListFr
 		super.onDetach();
     }
 
+	// Launch detail activity when cards are interacted with
     @Override
     public void onListFragmentInteraction(AlbumItem item) {
         Intent intent = new Intent(getContext(), AlbumDetailActivity.class);
@@ -99,4 +103,22 @@ public class AlbumListFragment extends Fragment implements AlbumAdapter.OnListFr
                         (View) getActivity().findViewById(R.id.container), "cover");
         startActivity(intent, options.toBundle());
     }
+
+	public void toogleLayoutManager() {
+
+		mColumnCount = (mColumnCount == 1)? 2 : 1;
+
+		Context context = (Context) getContext();
+		LayoutInflater inflater = LayoutInflater.from(context);
+		RecyclerView view = (RecyclerView) getView();
+
+		adapter = new AlbumAdapter(albumList, this, mColumnCount, context);
+		view.setAdapter(adapter);
+
+		if (mColumnCount <= 1) {
+			view.setLayoutManager(new LinearLayoutManager(context));
+		} else {
+			view.setLayoutManager(new GridLayoutManager(context, mColumnCount));
+		}
+	}
 }

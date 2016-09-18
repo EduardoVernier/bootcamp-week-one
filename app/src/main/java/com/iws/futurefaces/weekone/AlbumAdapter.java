@@ -15,7 +15,6 @@ import java.util.List;
 /**
  * {@link RecyclerView.Adapter} that can display a {@link AlbumItem} and makes a call to the
  * specified {@link OnListFragmentInteractionListener}.
- * TODO: Replace the implementation with code for your data type.
  */
 public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> {
 
@@ -42,23 +41,16 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
 
         View view;
         ViewHolder viewHolder;
-        LayoutInflater inflater = LayoutInflater.from(context);
 
-        switch (viewType) {
-            case 1:
-                view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.album_item_linear, parent, false);
-                viewHolder = new ViewHolder(view);
-                break;
-            default:
-                view = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.album_item_grid, parent, false);
-                viewHolder = new ViewHolder(view);
-                break;
+        if (viewType == 1) {
+			view = LayoutInflater.from(parent.getContext())
+					.inflate(R.layout.album_item_linear, parent, false);
+			return viewHolder = new ViewHolder(view);
+		} else {
+			view = LayoutInflater.from(parent.getContext())
+					.inflate(R.layout.album_item_grid, parent, false);
+			return viewHolder = new ViewHolder(view);
         }
-
-
-        return viewHolder;
     }
 
     @Override

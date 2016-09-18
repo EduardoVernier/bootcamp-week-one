@@ -9,14 +9,17 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Override
+	AlbumListFragment albumListFrag;
+
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+		albumListFrag = new AlbumListFragment();
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new AlbumListFragment())
+                    .add(R.id.container, albumListFrag)
                     .commit();
         }
     }
@@ -33,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             // action with ID action_refresh was selected
             case R.id.toggleView:
-                Toast.makeText(this, "Skip selected", Toast.LENGTH_SHORT)
-                        .show();
+                Toast.makeText(this, "Skip selected", Toast.LENGTH_SHORT).show();
+				albumListFrag.toogleLayoutManager();
                 break;
             default:
                 break;
