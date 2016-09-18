@@ -1,5 +1,6 @@
 package com.iws.futurefaces.weekone;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -36,13 +37,24 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             // action with ID action_refresh was selected
             case R.id.toggleView:
-                Toast.makeText(this, "Skip selected", Toast.LENGTH_SHORT).show();
-				albumListFrag.toogleLayoutManager();
+                Toast.makeText(this, "Toggle", Toast.LENGTH_SHORT).show();
+				albumListFrag.toggleLayoutManager();
                 break;
             default:
                 break;
         }
-
         return true;
     }
+
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+		super.onConfigurationChanged(newConfig);
+
+		// Checks the orientation of the screen
+		if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+			albumListFrag.rotateLayout();
+		} else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+			albumListFrag.rotateLayout();
+		}
+	}
 }

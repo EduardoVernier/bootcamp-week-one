@@ -3,6 +3,7 @@ package com.iws.futurefaces.weekone;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
@@ -104,21 +105,46 @@ public class AlbumListFragment extends Fragment
         startActivity(intent, options.toBundle());
     }
 
-	public void toogleLayoutManager() {
+	public void toggleLayoutManager() {
 
 		mColumnCount = (mColumnCount == 1)? 2 : 1;
+		Context context = (Context) getContext();
+		RecyclerView view = (RecyclerView) getView();
+		if (context == null) // Virtual device sometimes has null context
+			return;
+
+		adapter = new AlbumAdapter(albumList, this, mColumnCount, context);
+		view.setAdapter(adapter);
+
+		if (mColumnCount == 1) {
+			view.setLayoutManager(new LinearLayoutManager(context));
+		} else {
+			if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+				view.setLayoutManager(new GridLayoutManager(context, mColumnCount+1));
+			else
+				view.setLayoutManager(new GridLayoutManager(context, mColumnCount));
+		}
+	}
+
+	public void rotateLayout() {
 
 		Context context = (Context) getContext();
-		LayoutInflater inflater = LayoutInflater.from(context);
+		if (context == null) // Virtual device sometimes has null context
+			return;
 		RecyclerView view = (RecyclerView) getView();
 
 		adapter = new AlbumAdapter(albumList, this, mColumnCount, context);
 		view.setAdapter(adapter);
 
-		if (mColumnCount <= 1) {
+		if (mColumnCount == 1) {
 			view.setLayoutManager(new LinearLayoutManager(context));
 		} else {
-			view.setLayoutManager(new GridLayoutManager(context, mColumnCount));
+			if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+				view.setLayoutManager(new GridLayoutManager(context, mColumnCount+1));
+			else
+				view.setLayoutManager(new GridLayoutManager(context, mColumnCount));
 		}
 	}
+
+
 }
