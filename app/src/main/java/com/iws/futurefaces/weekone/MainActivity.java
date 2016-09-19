@@ -47,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.toggleView:
 				albumListFrag.toggleLayoutManager(item);
                 break;
+            case R.id.credits:
+                startActivity(new Intent(this, CreditsActivity.class));
+                break;
             default:
                 break;
         }

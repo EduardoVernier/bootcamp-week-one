@@ -36,8 +36,7 @@
                 android:paddingRight="@dimen/album_title_padding"
                 android:paddingTop="@dimen/album_title_padding"
                 android:textColor="@color/album_title"
-                android:textSize="@dimen/album_title_linear"
-                android:text="asdasdas"/>
+                android:textSize="@dimen/album_title_linear"/>
 
             <TextView
                 android:id="@+id/artist"
@@ -48,8 +47,7 @@
                 android:paddingBottom="@dimen/artist_padding_bottom"
                 android:paddingLeft="@dimen/album_title_padding"
                 android:paddingRight="@dimen/album_title_padding"
-                android:textSize="@dimen/artist_linear"
-                android:text="asfasddddddddddasdasdddddddas"/>
+                android:textSize="@dimen/artist_linear"/>
 
 
         </RelativeLayout>

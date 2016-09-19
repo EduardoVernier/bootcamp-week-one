@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="fb690b96001f7cacb8553c3da462c6cbcbae90ae">
+        <dex dex="/home/administrador/AndroidStudioProjects/bootcamp-week-one/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c2f0021afe0764a0699ed4588754d92bc0ae4e08/classes.dex" />
+    </item>
+
+</items>
