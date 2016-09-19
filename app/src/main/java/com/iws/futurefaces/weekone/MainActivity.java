@@ -1,5 +1,6 @@
 package com.iws.futurefaces.weekone;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,8 +16,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-		albumListFrag = new AlbumListFragment();
 
+		Intent welcome = new Intent(this, WelcomeActivity.class);
+		startActivity(welcome);
+
+		setContentView(R.layout.activity_main);
+		albumListFrag = new AlbumListFragment();
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, albumListFrag)
