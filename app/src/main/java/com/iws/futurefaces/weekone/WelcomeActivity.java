@@ -1,7 +1,6 @@
 package com.iws.futurefaces.weekone;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
@@ -42,7 +41,6 @@ public class WelcomeActivity extends AppCompatActivity {
 		viewPager.setAdapter(viewPagerAdapter);
 		viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
 
-
 		Button goButton = (Button) findViewById(R.id.go);
 		goButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -74,16 +72,13 @@ public class WelcomeActivity extends AppCompatActivity {
 		return viewPager.getCurrentItem() + i;
 	}
 
-	private void launchHomeScreen() {
-		startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
-		finish();
-	}
-
 	ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
 
 		@Override
 		public void onPageSelected(int position) {
 			addBottomDots(position);
+
+			// Show GO button on last page
 			if (position == 2)
 				findViewById(R.id.go).setVisibility(View.VISIBLE);
 			else
@@ -91,14 +86,10 @@ public class WelcomeActivity extends AppCompatActivity {
 		}
 
 		@Override
-		public void onPageScrolled(int arg0, float arg1, int arg2) {
-
-		}
+		public void onPageScrolled(int arg0, float arg1, int arg2) {}
 
 		@Override
-		public void onPageScrollStateChanged(int arg0) {
-
-		}
+		public void onPageScrollStateChanged(int arg0) {}
 	};
 
 	public class MyViewPagerAdapter extends PagerAdapter {
@@ -126,7 +117,6 @@ public class WelcomeActivity extends AppCompatActivity {
 		public boolean isViewFromObject(View view, Object obj) {
 			return view == obj;
 		}
-
 
 		@Override
 		public void destroyItem(ViewGroup container, int position, Object object) {

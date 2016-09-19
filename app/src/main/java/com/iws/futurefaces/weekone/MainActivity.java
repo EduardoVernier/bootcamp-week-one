@@ -11,14 +11,19 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity {
 
 	AlbumListFragment albumListFrag;
+	static boolean seenWelcome = false;
 
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-		Intent welcome = new Intent(this, WelcomeActivity.class);
-		startActivity(welcome);
+		if (!seenWelcome)
+		{
+			Intent welcome = new Intent(this, WelcomeActivity.class);
+			startActivity(welcome);
+			seenWelcome = true;
+		}
 
 		setContentView(R.layout.activity_main);
 		albumListFrag = new AlbumListFragment();

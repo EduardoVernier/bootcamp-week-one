@@ -6,7 +6,13 @@
         <item>Time Out</item>
         <item>Ellington At Newport</item>
         <item>Jazz At Massey Hall</item>
-
+        <item>The Best of the Hot 5 &amp; Hot 7 Recordings</item>
+        <item>Blue Train</item>
+        <item>Getz/Gilberto</item>
+        <item>Mingus Ah Um</item>
+        <item>Concert By the Sea</item>
+        <item>Bitches Brew</item>
+        <item>Saxophone Colossus</item>
     </string-array>
 
     <string-array name="artists">
@@ -15,6 +21,13 @@
         <item>Dave Brubeck</item>
         <item>Duke Ellington</item>
         <item>The Quintet</item>
+        <item>Louis Armstrong</item>
+        <item>John Coltrane</item>
+        <item>Stan Getz &amp; Joao Gilberto</item>
+        <item>Charles Mingus</item>
+        <item>Errol Garner</item>
+        <item>Miles Davis</item>
+        <item>Sonny Rollins</item>
      </string-array>
 
     <string-array name="descriptions">
@@ -23,6 +36,13 @@
         <item>Dave Brubeck created a masterpiece which became the first instrumental jazz album to sell over a million copies. The single, "Take Five" was a number one hit on music charts which is outstanding for a jazz song, especially a song with 5/4 time signature. This album had a strong influence from Eastern European culture as Brubeck used many of their rhythms and time signatures. The complex rhythms he uses sound unique yet very natural and easy to listen to, probably the reason for it\'s success.</item>
         <item>This historic concert was a triumphant moment for Ellington\'s band... It was 1956 and many big bands were struggling due to the rise of bebop and modern small group format. So at the 3rd annual Newport Jazz Festival, Ellington attempted to please the crowd with some new suites and arrangements, but the crowd was still sedated. Then finally on a two-section song, Dimuendo and Crescendo in Blue, Duke had the two sections connect with a sax solo by Paul Gonzalves and allowed him to play the solo as long as he felt like playing. He only usually took a couple choruses but this time Gonzalves took a 27 chorus solo that eventually had the crowd off its feet and dancing! This historical moment changed the face of jazz and also gave Ellington\'s band some new success. Duke\'s band continued performing from this newfound popularity for 18 more years.</item>
         <item>This album appears reissued under the name "The Greatest Concert Ever". It is an all star lineup of Charlie Parker, Dizzy Gillespie, Bud Powell, Charles Mingus, and Max Roach; all who were prominent in the development of bebop about 15 years beforehand (1953) and thus were all seasoned veterans by the time of the concert. This is the only recording of these five legends playing together and everyone plays brilliantly. In addition, the recording quality is very good for its time so it is a great album to really hear these masters perform at their best.</item>
+        <item>No greatest jazz album list is complete without Louis Armstrong. Besides being a legendary entertainer and musician, he helped bring jazz out of it\'s dixieland roots into a more contemporary sound. This album is a compilation of some of his best recordings from his early years in the 1920\'s as he set up the template for modern jazz era to come having musician taking turns soloing individually rather than the group jam style of dixieland. The musicians on these recordings are tight, joyous, and even a little silly at times. Louis Armstrong is jazz\'s first superstar and this album showcases him at his best.</item>
+        <item>Recorded in 1957, this album was Coltrane\'s first album as a leader. It\'s very interesting to hear how Coltrane was playing before he started heading to the freer, passionate playing that he later developed in the mid 60\'s. Did you know that just a few years earlier, Coltrane was considered just a mediocre player? He studied and performed so much that he has became an icon of musical discipline. He was known to constantly practice after gigs late into the night while other band members partied. These songs and performances show his immense strength and power he had developed up to this point.</item>
+        <item>This album was very popular and even won the 1965 Grammy Award for Best Album. Additionally, it created a bossa nova craze in the United States as people embraced it\'s lush chords and subtle, mellow style. Stan Getz, Joao and Astrud Gilberto are extremely graceful and intimate as they float along through this wonderful material composed by the great Antonio Carlos Jobim. I think the best word to describe this album is relaxing.</item>
+        <item>Charles Mingus had a way of making his bands sound complex, original, and of course swing like crazy. In addition to the swinging tunes, there are some amazing ballads filled with colorful and inventive horn arrangements. I personally love the song "Fables of Faubus", a track dedicated to the infamous former governor of Arkansas who strongly opposed racial integration in schools in 1957. It is a great example of musicians using their art to make a powerful political statement.</item>
+        <item>Errol Garner is a legendary pianist who has a wonderful recognizable style. It\'s worth mentioning that he couldn\'t read a note of written music and plays entirely by ear. This album is very interesting both harmonically and rhythmically. His left hand swings so hard in a way that was not typical of other pianists. While his playing exudes joy he is also quite technically fluent and plays extravagant arrangements of many popular standards like Autumn Leaves and I\'ll Remember April.</item>
+        <item>This album was a triumph for Miles Davis later in his career in 1970. Two drummers, two bassists, three keyboardists consisting mostly of free spontaneous electric improvisation. Also for the first time, the recording tape was sliced and diced a bit in the studio to make certain parts repeat and to add effects which was unheard of on a jazz record. Yet even with all that... or maybe because of all that... it is Miles\' second best selling album of all time behind Kind of Blue. When it was released, people were debating whether it was a great album or just experimental nonsense but today in hindsight it is easy to see that it is truly is a timeless masterpiece.</item>
+        <item>This is one of Sonny Rollins best albums he ever recorded among the hundreds he has made over a long lifetime that still continues today. Recorded in 1956, every song is feels so sophisticated yet soulful and smooth. It only has five songs but each one is a hit and Sonny\'s playing never fails. Sonny plays complex bebop that is very accessible because he plays every note with conviction and has a great sense of melody.</item>
     </string-array>
 
     <string-array name="uri">
@@ -31,6 +51,13 @@
         <item>spotify:track:1hVXZoSAkZ3P5Lp6fKOcgx</item>
         <item>spotify:track:6ftc14ulcme4t46JYD2loQ</item>
         <item>spotify:track:4SJsmRv1lEli0KpHLnPvzf</item>
+        <item>spotify:track:0iQjS82KGDovYOZ1JfzciA</item>
+        <item>spotify:track:6ZgaUtMlUzUf7SqbUUnfbu</item>
+        <item>spotify:track:0GrNjx2fUXVbRcjhkYrDAX</item>
+        <item>spotify:track:0mbJqo6y9E3d57fhvYQKyT</item>
+        <item>spotify:track:7pQSmQ0l7QdBeL9X6CEMbH</item>
+        <item>spotify:track:7eEp1mm5xRfPMpilLFUKwX</item>
+        <item>spotify:track:0zQE77yszbyv61M4NboU2u</item>
     </string-array>
 
 
